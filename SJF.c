@@ -40,6 +40,9 @@ void sjf(process *p, int n)
 
     for (int i = 0; i < n; i++)
     {
+        if(p[i].at > completion_time){
+            completion_time = p[i].at;
+        }
         p[i].wt = completion_time - p[i].at;
         p[i].tat = p[i].wt + p[i].bt;
         completion_time += p[i].bt;
